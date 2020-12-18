@@ -4,10 +4,11 @@
 ; Author: Professor Krasso
 ; Date:   16 December 2020
 ; Modified by: Karina Alvarez
-; Description:
+; Description: app component
 ;===========================================
 */
 
+//component - import
 import { Component } from '@angular/core';
 
 @Component({

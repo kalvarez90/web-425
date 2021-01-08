@@ -8,7 +8,7 @@
 ;===========================================
 */
 
-//interface
+//creates interface and exports access to another file
 export interface IPerson {
     firstName: string;
     lastName: string;

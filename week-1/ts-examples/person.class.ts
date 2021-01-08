@@ -24,4 +24,6 @@
 
  //new person object
  let myName = new Person ("Karina", "Alvarez");
+
+ // output
  console.log(`My name is ${myName.firstName} ${myName.lastName}`);

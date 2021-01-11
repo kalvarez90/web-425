@@ -8,7 +8,7 @@
 ;===========================================
 */
 
-//external files import
+//These are files being imported from external files
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

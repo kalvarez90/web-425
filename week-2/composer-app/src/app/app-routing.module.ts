@@ -8,15 +8,15 @@
 ;===========================================
 */
 
-//Import from external files
+//These are files being imported from external files
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ComposerListComponent } from './composer-list/composer-list.component';
 import { ContactComponent } from './contact/contact.component';
 
-// paths added to the routes array
-// each path will take you to designated component
+// These are the paths added to the routes array
+// Each of these path will take you to designated component
 const routes: Routes = [
   {
     path: '',

@@ -10,7 +10,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-//Composer class with two fields
+//Here we find the composer class with two fields - fullName and genre
 export default class Composer {
   fullName: string;
   genre: string;

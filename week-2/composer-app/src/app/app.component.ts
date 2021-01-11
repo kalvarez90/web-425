@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-//title for html file
+//assignment name embedded in the html file
 export class AppComponent {
   assignment: string = 'Assignment 2.4 - Routing in Action';
 }

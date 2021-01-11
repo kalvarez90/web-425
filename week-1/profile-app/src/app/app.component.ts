@@ -15,6 +15,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+//assignment name embedded in the app.component.html file
 export class AppComponent {
   assignment: string = "Assignment 1.5 - Components";
 }

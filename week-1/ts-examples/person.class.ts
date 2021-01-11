@@ -11,7 +11,7 @@
 
  import  { IPerson } from "./person.interface"
 
- //class implementation
+ //class implementation of IPerson with two fields
  class Person implements IPerson {
      firstName: string;
      lastName: string;
@@ -22,8 +22,8 @@
      }
  }
 
- //new person object
+ //variable myName creates a new person object
  let myName = new Person ("Karina", "Alvarez");
 
- // output
+ // outputting full name
  console.log(`My name is ${myName.firstName} ${myName.lastName}`);

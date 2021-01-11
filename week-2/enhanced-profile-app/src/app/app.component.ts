@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
 })
 
 //inLoggedIn variable gives access to site when set to true
+//assignment name embedded in the app.component.html file
 export class AppComponent {
   isLoggedIn: Boolean = true;
   assignment: string = 'Exercise 2.3 - Data Binding';

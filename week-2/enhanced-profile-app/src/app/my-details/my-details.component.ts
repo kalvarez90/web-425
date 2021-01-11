@@ -25,7 +25,7 @@ export default class Person {
     this.favoriteColor = favoriteColor;
   }
 
-  //toString method that will output the content of the class
+  //The toString method that will output the content of the class
   toString() {
     console.log(`\n Full Name: ${this.fullName}\n Favorite Food: ${this.favoriteFood}\n Favorite Color:  ${this.favoriteColor}`);
   }

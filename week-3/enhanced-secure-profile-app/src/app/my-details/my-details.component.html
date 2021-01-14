@@ -1,0 +1,12 @@
+<!-- This is an unordered list outputting fullName, favoriteFood, ad favoriteColor -->
+<ul class="list-group">
+  <li class="list-group-item">{{ myProfile.fullName }}</li>
+  <li class="list-group-item">{{ myProfile.favoriteFood }}</li>
+  <li class="list-group-item">{{ myProfile.favoriteColor }}</li>
+  <li class="list-group-item">
+    Keywords:
+    <span *ngFor = "let word of myProfile.keywords">
+      {{ word }}
+    </span>
+  </li>
+</ul>

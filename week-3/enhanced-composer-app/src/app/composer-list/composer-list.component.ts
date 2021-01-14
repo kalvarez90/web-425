@@ -8,18 +8,10 @@
 ;===========================================
 */
 
+//These are files being imported from external files
 import { Component, OnInit } from '@angular/core';
-
-//Here we find the composer class with two fields - fullName and genre
-export default class Composer {
-  fullName: string;
-  genre: string;
-
-  constructor(fullName:string, genre:string) {
-    this.fullName = fullName;
-    this.genre = genre;
-  }
-}
+import { IComposer } from '../composer.interface';
+import { Composer } from '../composer.class';
 
 @Component({
   selector: 'app-composer-list',
@@ -28,17 +20,11 @@ export default class Composer {
 })
 export class ComposerListComponent implements OnInit {
 
-  composers: Array<Composer>;
+  composers: Array<IComposer>;
 
-  //array with five Composer objects
+  //creating a new instance of the composer class
   constructor() {
-    this.composers = [
-      new Composer('Ludwig van Beethoven', 'Classical'),
-      new Composer('Wolfgang Amadeus Mozart', 'Classical'),
-      new Composer('Richard Wagner', 'Classical'),
-      new Composer('Claude Debussy', 'Classical'),
-      new Composer('Frederic Chopin', 'Classical')
-    ]
+    this.composers = new Composer().getComposers();
    }
 
   ngOnInit(): void {

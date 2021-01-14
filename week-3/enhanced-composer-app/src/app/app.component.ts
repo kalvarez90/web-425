@@ -8,6 +8,7 @@
 ;===========================================
 */
 
+//These are files being imported from external files
 import { Component } from '@angular/core';
 
 @Component({
@@ -18,5 +19,5 @@ import { Component } from '@angular/core';
 
 //assignment name embedded in the app.component.html file
 export class AppComponent {
-  assignment: string = 'Assignment 2.4 - Routing in Action';
+  assignment: string = 'Exercise 3.2 - Passing Data to Routes, Part 1';
 }

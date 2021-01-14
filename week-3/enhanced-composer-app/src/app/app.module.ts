@@ -17,17 +17,22 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { ComposerListComponent } from './composer-list/composer-list.component';
 import { AboutComponent } from './about/about.component';
+import { ComposerDetailsComponent } from './composer-details/composer-details.component';
+import { RouterModule } from '@angular/router'
 
+//auto generated declarations when CLI was used to create each component
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
     ComposerListComponent,
-    AboutComponent
+    AboutComponent,
+    ComposerDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

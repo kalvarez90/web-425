@@ -7,6 +7,8 @@
 ; Description: my details component
 ;===========================================
 */
+
+//These are files being imported from external files
 import { Component } from '@angular/core';
 
 @Component({
@@ -15,9 +17,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-//inLoggedIn variable gives access to site when set to true
 //assignment name embedded in the app.component.html file
 export class AppComponent {
-  isLoggedIn: Boolean = true;
-  assignment: string = 'Exercise 2.3 - Data Binding';
+  assignment: string = 'Exercise 3.3 - Passing Data to Routes, Part 2';
 }

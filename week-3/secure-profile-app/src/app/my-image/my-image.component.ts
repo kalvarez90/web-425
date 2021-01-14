@@ -8,6 +8,7 @@
 ;===========================================
 */
 
+//These are files being imported from external files
 import { Component, OnInit } from '@angular/core';
 
 @Component({

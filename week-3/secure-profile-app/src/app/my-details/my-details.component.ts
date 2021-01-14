@@ -10,7 +10,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-//TypeScript Person class with different variables
+//TypeScript Person class with different variables added to the constructor
 export default class Person {
   fullName: string;
   favoriteFood: string;

@@ -11,7 +11,7 @@
       <tbody *ngFor="let composer of composers">
         <tr>
 
-          <!-- table of different composers with ID link -->
+          <!-- A table of different composers with ID link, fullName, and genre-->
           <td scope="row">
             <a routerLink="/composer-details/{{ composer.composerId }}">
               {{ composer.composerId }}

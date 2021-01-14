@@ -1,0 +1,4 @@
+/* image borders are rounded 15px */
+img {
+  border-radius: 15px;
+}

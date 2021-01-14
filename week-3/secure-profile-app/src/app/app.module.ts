@@ -8,6 +8,7 @@
 ;===========================================
 */
 
+//These are files being imported from external files
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +17,12 @@ import { MyImageComponent } from './my-image/my-image.component';
 import { MyDetailsComponent } from './my-details/my-details.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
+import { AppRoutes } from './app.routing';
+import { RouterModule } from '@angular/router';
 
+
+
+//auto generated declarations when CLI was used to create each component
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

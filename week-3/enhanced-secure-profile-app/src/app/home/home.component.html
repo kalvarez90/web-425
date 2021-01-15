@@ -23,7 +23,7 @@
   <br>
 
   <!-- if inLoggedIn is set to true -->
-  <div class="row" *ngIf= "isLoggedIn; else showError">
+  <div class="row">
 
 <!-- Displays Image embedded from my-image -->
     <div class="col-sm-5">
@@ -37,16 +37,4 @@
     </div>
 
   </div>
-
-  <!--if inLogged in is set to false -->
-  <ng-template #showError>
-    <div class="row">
-      <div class="col-sm-12">
-        <h4 class="alert alert-danger">You are not authorized to view this content</h4>
-      </div>
-    </div>
-
-  </ng-template>
-
-
 </div>

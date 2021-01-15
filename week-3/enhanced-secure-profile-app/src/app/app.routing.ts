@@ -12,9 +12,11 @@
 import { Routes } from '@angular/router';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
+import { SignInGuard } from './sign-in.guard'
 
 // These are the paths added to the routes array
 // Each of these path will take you to designated component
+//SignInGuard will protect the access from unauthorized user
 export const AppRoutes: Routes = [
   {
     path: '',
@@ -22,6 +24,7 @@ export const AppRoutes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [SignInGuard]
   }
 ]

@@ -38,7 +38,7 @@ export default class Person {
 })
 export class MyDetailsComponent implements OnInit {
 
-  //variable myProfile will be a person datatype
+  //variable myProfile will be a person data type
   myProfile: Person;
 
   constructor() {

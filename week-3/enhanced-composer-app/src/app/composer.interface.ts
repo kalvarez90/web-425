@@ -9,6 +9,7 @@
 */
 
 //IComposer interface consisting of three fields
+//This will be created in composer.class
 export interface IComposer {
   composerId: number;
   fullName: string;

@@ -23,6 +23,7 @@ export class ComposerListComponent implements OnInit {
   composers: Array<IComposer>;
 
   //creating a new instance of the composer class
+  //getComposers() will return a list of the composers
   constructor() {
     this.composers = new Composer().getComposers();
    }

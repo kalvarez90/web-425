@@ -19,5 +19,5 @@ import { Component } from '@angular/core';
 
 //assignment name embedded in the app.component.html file
 export class AppComponent {
-  assignment: string = 'Exercise 4.2 - Inversion of Control and Dependency Injection';
+  assignment: string = 'Exercise 4.3 - Handling Events with Observables';
 }

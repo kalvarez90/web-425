@@ -1,0 +1,6 @@
+/* This is the CSS for the search Bar */
+.searchBar {
+  width: 30%;
+  float: right;
+  margin-bottom: 5px;
+}

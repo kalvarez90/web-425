@@ -1,0 +1,8 @@
+/* Here, text is being centered  and image using a max width of 100% */
+.bio {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}

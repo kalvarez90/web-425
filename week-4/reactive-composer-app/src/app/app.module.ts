@@ -19,6 +19,7 @@ import { ComposerListComponent } from './composer-list/composer-list.component';
 import { AboutComponent } from './about/about.component';
 import { ComposerDetailsComponent } from './composer-details/composer-details.component';
 import { RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //auto generated declarations when CLI was used to create each component
 @NgModule({
@@ -32,7 +33,9 @@ import { RouterModule } from '@angular/router'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

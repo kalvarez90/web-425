@@ -2,17 +2,20 @@
 ============================================
 ; Title:  composer-list-component.ts
 ; Author: Professor Krasso
-; Date:   14 January 2021
+; Date:   20 January 2021
 ; Modified by: Karina Alvarez
 ; Description: composer lists
 ;===========================================
 */
 
-import {IComposer} from './composer.interface';
+//These are files being imported from external files
+import { Injectable } from '@angular/core';
+import { IComposer } from './composer.interface';
 
-//Here we find the composer class with a constructor of 5 composer objects
-export class Composer {
-
+@Injectable({
+  providedIn: 'root'
+})
+export class ComposerService {
   composers: Array<IComposer>;
 
   constructor() {

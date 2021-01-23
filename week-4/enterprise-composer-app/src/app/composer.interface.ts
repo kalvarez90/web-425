@@ -2,7 +2,7 @@
 ============================================
 ; Title:  composer-list-component.ts
 ; Author: Professor Krasso
-; Date:   20 January 2021
+; Date:   23 January 2021
 ; Modified by: Karina Alvarez
 ; Description: composer lists
 ;===========================================

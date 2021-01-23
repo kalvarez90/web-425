@@ -25,12 +25,12 @@ export class ComposerDetailsComponent implements OnInit {
   composer: IComposer;
 
   //activated route to build access the value inside path of composerId
-  constructor(private route: ActivatedRoute, private ComposerService: ComposerService) {
+  constructor(private route: ActivatedRoute, private composerService: ComposerService) {
     this.composerId = parseInt(this.route.snapshot.paramMap.get('composerId'),10);
 
     //This will allow the built-in features of Angular to control the creation of a new class
     if (this.composerId) {
-      this.composer = this.ComposerService.getComposer(this.composerId);
+      this.composer = this.composerService.getComposer(this.composerId);
     }
   }
 

@@ -16,7 +16,8 @@
           <th scope="col">Genre</th>
         </tr>
       </thead>
-      <tbody *ngFor="let composer of composers">
+      <!-- async pipe has been added to the body -->
+      <tbody *ngFor="let composer of composers | async">
         <tr>
 
           <!-- A table of different composers with ID link, fullName, and genre-->

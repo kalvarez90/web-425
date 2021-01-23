@@ -2,7 +2,7 @@
 ============================================
 ; Title:  composer-list-component.ts
 ; Author: Professor Krasso
-; Date:   20 January 2021
+; Date:   23 January 2021
 ; Modified by: Karina Alvarez
 ; Description: composer lists
 ;===========================================
@@ -14,6 +14,7 @@ import { IComposer } from '../composer.interface';
 import { ComposerService } from '../composer.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -23,13 +24,13 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ComposerListComponent implements OnInit {
 
-  composers: Array<IComposer>;
+  composers: Observable<IComposer[]>;
   txtSearchControl = new FormControl('');
 
   //getComposers() will return a list of the composers
   //Using dependency injection to create a new instance of the composer service
-  constructor(private ComposerService: ComposerService) {
-    this.composers = this.ComposerService.getComposers();
+  constructor(private composerService: ComposerService) {
+    this.composers = this.composerService.getComposers();
 
     //The debounceTime is used to slow down the number of times the filterComposer function is called
     //Without it each time a value is entered in the search bar the filterComposer() would be called
@@ -40,9 +41,8 @@ export class ComposerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //an alert box will be shown once a value is entered in the txtSearchControl
   filterComposers(name: string) {
-    alert(name);
+    this.composers = this.composerService.filterComposer(name);
   }
 
 }

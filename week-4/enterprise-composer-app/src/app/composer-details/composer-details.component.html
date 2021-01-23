@@ -1,0 +1,18 @@
+<!-- Showing the content of the composer object -->
+<div class="row">
+
+  <div class="col-sm-12">
+
+    <!-- Information found withing curly braces comes from a external file -->
+    <ul class="list-group">
+      <li class="list-group-item">Composer ID: {{ composer.composerId }}</li>
+      <li class="list-group-item">Full Name: {{ composer.fullName }}</li>
+      <li class="list-group-item">Genre: {{composer.genre }}</li>
+    </ul>
+
+    <br>
+
+    <!-- link that will re-direct you back to the composers page -->
+    <a routerLink='/composer-list' class="float-right"> Return to Composers </a>
+  </div>
+</div>

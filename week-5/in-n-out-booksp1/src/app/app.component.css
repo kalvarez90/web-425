@@ -1,0 +1,11 @@
+/* This will change the top margin */
+.logo {
+  margin-top: 5px;
+}
+
+/* This will affect padding, width, and margin of the main container*/
+.main-container {
+  padding-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+}

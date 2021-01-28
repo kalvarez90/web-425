@@ -2,7 +2,7 @@
 ============================================
 ; Title:  app.module.ts
 ; Author: Professor Krasso
-; Date:   26 January 2021
+; Date:   27 January 2021
 ; Modified by: Karina Alvarez
 ; Description: module file
 ;===========================================
@@ -25,6 +25,8 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { BookDetailsDialogComponent } from './book-details-dialog/book-details-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //auto generated declarations when CLI was used to create each component
 @NgModule({
@@ -32,7 +34,8 @@ import { MatTableModule } from '@angular/material/table';
     AppComponent,
     AboutComponent,
     ContactComponent,
-    BookListComponent
+    BookListComponent,
+    BookDetailsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     FlexLayoutModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

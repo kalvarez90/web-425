@@ -12,7 +12,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignInService } from '../sign-in.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -30,11 +30,16 @@ export class SignInComponent implements OnInit {
    }
 
    //creating a new Angular form
+   //Angular built-in required Validator only accepting numeric values. Field is required.
   ngOnInit(): void {
     this.signinForm = this.fb.group({
-      studentId: ''
+      studentId: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9]*$')])]
     })
   }
+
+  //a helper function to return the forms controls
+  //by doing this we apply client-side validation in a predictable way
+  get form() { return this.signinForm.controls; }
 
 
   //once user click submit, value will be capture and student ID value will be hold

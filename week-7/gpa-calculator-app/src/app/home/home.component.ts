@@ -11,6 +11,7 @@
 //These are files being imported from external files
 import { Component, OnInit } from '@angular/core';
 import { ITranscript } from '../transcript.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -19,27 +20,36 @@ import { ITranscript } from '../transcript.interface';
 })
 export class HomeComponent implements OnInit {
 
-  // a variable named transcriptEntry of type ITranscript (from transcript.interface.ts)
-  transcriptEntry: ITranscript;
-
   // a variable named selectableGrades of type Array<string> with different letter grading values
   selectableGrades: Array<string> = ['A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+' ,'D' ,'D-', 'F'];
 
   //a variable name transcriptEntries of type Array<ITranscript> and set to an empty array
   transcriptEntries: Array<ITranscript>=[];
   gpaTotal: number = 0;
+  transcriptForm: FormGroup;
 
-  constructor() {
-    this.transcriptEntry = {} as ITranscript;
+  constructor(private fb: FormBuilder) {
   }
 
+  //Replacing the template driven form with a more flexible reactive form
   ngOnInit(): void {
+    this.transcriptForm = this.fb.group({
+      course: ['', Validators.required],
+      grade: ['', Validators.required]
+    })
   }
 
-  //saveEntry() function pushing transcriptEntries to transcriptEntry
-  saveEntry(){
-    this.transcriptEntries.push(this.transcriptEntry);
-    this.transcriptEntry = {} as ITranscript;
+  get form() { return this.transcriptForm.controls; }
+
+  //onSubmit() function pushing transcriptEntries to course and grade values
+  onSubmit(event){
+    this.transcriptEntries.push({
+      course: this.form.course.value,
+      grade: this.form.grade.value
+    });
+
+    //this even will reset validation
+    event.currentTarget.reset()
   }
 
   calculateResults(){

@@ -13,6 +13,12 @@
         {{ errorMessage }}
       </div>
 
+      <div *ngIf='form.studentId.errors && form.studentId.touched'>
+        <div>
+
+        </div>
+      </div>
+
       <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="10px">
 
         <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); signinForm.reset()">
@@ -20,13 +26,14 @@
 
             <mat-form-field fxFlex appearance="fill">
               <mat-label for="txtStudentId" id="lblStudentId">Student ID</mat-label>
-              <input type="text" matInput formControlName="studentId" id="txtStudentId" name="txtStudentId" />
+              <input type="text" required matInput formControlName="studentId" id="txtStudentId" name="txtStudentId" />
             </mat-form-field>
           </mat-card-content>
 
           <!-- button where user will be able to submit form -->
+          <!-- button is disabled when form is invalid -->
           <mat-card-actions>
-            <button type="submit" fxFlex mat-raised-button color="primary">Submit</button>
+            <button type="submit" [disabled]='!signinForm.valid' fxFlex mat-raised-button color="primary">Submit</button>
           </mat-card-actions>
         </form>
       </mat-card>

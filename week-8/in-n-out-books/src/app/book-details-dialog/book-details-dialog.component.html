@@ -1,0 +1,24 @@
+<!-- pop-up window that will appear after user clicks on ISBN -->
+<mat-card>
+  <!-- Book title will appear in bold blue letters -->
+  <mat-card-title class="blue">
+    {{ book.title }}
+  </mat-card-title>
+  <br /><br />
+
+  <!-- Book information will appear under title (isbn, description, and author)-->
+  <mat-card-content>
+    <div fxLayout="column" class="book-details">
+      <p>ISBN: {{ book.isbn }}</p>
+
+      <p>Description:<br /> {{ book.description }}</p>
+
+      <p>Authors:<br /> {{ book.authors.join(', ')}}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+
+    <!-- OK button will close the pop-up window-->
+    <button mat-raised-button color="accent" matDialogClose="confirm">OK</button>
+  </mat-card-actions>
+</mat-card>

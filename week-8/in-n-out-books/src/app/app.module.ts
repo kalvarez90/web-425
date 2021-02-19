@@ -2,7 +2,7 @@
 ============================================
 ; Title:  app.module.ts
 ; Author: Professor Krasso
-; Date:   2 February 2021
+; Date:   16 February 2021
 ; Modified by: Karina Alvarez
 ; Description: module file
 ;===========================================
@@ -32,6 +32,8 @@ import { WishlistCreateComponent } from './wishlist-create/wishlist-create.compo
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 //auto generated declarations when CLI was used to create each component
 @NgModule({
@@ -58,7 +60,9 @@ import { MatInputModule } from '@angular/material/input';
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

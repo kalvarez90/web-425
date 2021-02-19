@@ -2,7 +2,7 @@
 ============================================
 ; Title:  book-list.component.ts
 ; Author: Professor Krasso
-; Date:   26 January 2021
+; Date:   16 February 2021
 ; Modified by: Karina Alvarez
 ; Description: book list page
 ;===========================================
@@ -11,9 +11,8 @@
 //These are files being imported from external files
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
-import { IBook } from '../book-interface';
-import { Observable } from 'rxjs';
-import {MatDialog } from '@angular/material/dialog';
+import { IBook } from '../book.interface';
+import { MatDialog } from '@angular/material/dialog';
 import { BookDetailsDialogComponent } from '../book-details-dialog/book-details-dialog.component';
 
 
@@ -24,22 +23,41 @@ import { BookDetailsDialogComponent } from '../book-details-dialog/book-details-
 })
 export class BookListComponent implements OnInit {
 
-  books: Observable<IBook[]>;
-  // an array of string for the header of the table in book-list.component.html
-  header: Array<string> = ['isbn', 'title', 'numOfPages', 'authors']
+  books: Array<IBook> = [];
   book: IBook;
 
-  //With this constructor will be able to access the book service
+  //Subscribing to getBooks() and looping over the response data object
   constructor(private booksService: BooksService, private dialog: MatDialog) {
-    this.books = this.booksService.getBooks();
-   }
+    this.booksService.getBooks().subscribe(res => {
+      console.log(res);
+      for (let key in res) {
+        if (res.hasOwnProperty(key)) {
+          let authors = [];
+          if (res[key].details.authors) {
+            authors = res[key].details.authors.map(function(author) {
+              return author.name;
+            })
+          }
 
-  ngOnInit(): void {
+          //In order to access the field values of the object we need to reference them by dot notation
+          //this is the format being returned from the API
+          this.books.push({
+            isbn: res[key].details.isbn_13 ? res[key].details.isbn_13 : res[key].details.isbn_10,
+            title: res[key].details.title,
+            description: res[key].details.subtitle ? res[key].details.subtitle : 'N/A',
+            numOfPages: res[key].details.number_of_pages,
+            authors: authors
+          })
+        }
+      }
+    })
   }
 
-  //ShowBookDetails will take an isbn of type string
-  showBookDetails(isbn: string) {
-    this.book = this.booksService.getBook(isbn);
+  ngOnInit(): void { }
+
+  //using JavaScript built-in find function to search the books array and return the matching book object
+   showBookDetails(isbn: string) {
+    this.book = this.books.find(book => book.isbn === isbn);
 
     const dialogRef = this.dialog.open(BookDetailsDialogComponent, {
       data: { book: this.book },

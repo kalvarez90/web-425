@@ -11,7 +11,7 @@
 //These are files being imported from external files
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { IBook } from '../book-interface';
+import { IBook } from '../book.interface';
 
 @Component({
   selector: 'app-book-details-dialog',
